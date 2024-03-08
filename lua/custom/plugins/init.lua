@@ -3,30 +3,39 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-	{
-		"lervag/vimtex",
-		config = function()
-			vim.g.tex_flavor = 'latex'
-		end,
-	},
-	{
-		"jalvesaq/Nvim-R",
-		config = function()
-			vim.g.R_assign = 0
-			vim.g.R_hl_term = 1
-		end,
-	},
-	"godlygeek/tabular",
-	"ntpeters/vim-better-whitespace",
-	"craftzdog/solarized-osaka.nvim",
-	"catppuccin/nvim",
-	"rebelot/kanagawa.nvim",
-	"NLKNguyen/papercolor-theme",
-	"ellisonleao/gruvbox.nvim",
-	"Mofiqul/dracula.nvim",
-	"joshdick/onedark.vim",
-	"romainl/Apprentice",
-	"shaunsingh/solarized.nvim"
+  {
+    'lervag/vimtex',
+    config = function()
+      vim.g.tex_flavor = 'latex'
+      -- Lets silence some errors :)
+      vim.g.vimtex_quickfix_ignore_filters = {
+        'Underfull',
+        'Overfull',
+        'LaTeX Warning: .+ float specifier changed to',
+        'LaTeX hooks Warning',
+        'Package siunitx Warning: Detected the "physics" package:',
+        'Package hyperref Warning: Token not allowed in a PDF string',
+      }
+    end,
+  },
+  {
+    'jalvesaq/Nvim-R',
+    config = function()
+      vim.g.R_assign = 0
+      vim.g.R_hl_term = 1
+    end,
+  },
+  'godlygeek/tabular',
+  'ntpeters/vim-better-whitespace',
+  'craftzdog/solarized-osaka.nvim',
+  'catppuccin/nvim',
+  'rebelot/kanagawa.nvim',
+  'NLKNguyen/papercolor-theme',
+  'ellisonleao/gruvbox.nvim',
+  'Mofiqul/dracula.nvim',
+  'joshdick/onedark.vim',
+  'romainl/Apprentice',
+  'shaunsingh/solarized.nvim',
 }
 -- vim.g.tex_flavor = 'latex'
 -- vim.g.R_assign = 0
