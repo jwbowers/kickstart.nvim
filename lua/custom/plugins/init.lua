@@ -25,6 +25,15 @@ return {
       vim.g.R_hl_term = 1
     end,
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    options = {
+      globalstatus = true,
+      -- theme = 'solarized_dark',
+      icons_enabled = true,
+    },
+  },
   'godlygeek/tabular',
   'ntpeters/vim-better-whitespace',
   'craftzdog/solarized-osaka.nvim',
@@ -37,10 +46,3 @@ return {
   'romainl/Apprentice',
   'shaunsingh/solarized.nvim',
 }
--- vim.g.tex_flavor = 'latex'
--- vim.g.R_assign = 0
--- vim.g.R_app = "radian"
--- vim.g.R_cmd = "R"
--- vim.g.R_hl_term = 0
--- vim.g.R_args = {}
--- vim.g.R_bracketed_paste = 1
