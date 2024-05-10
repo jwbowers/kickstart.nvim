@@ -539,7 +539,8 @@ require('lazy').setup({
         rust_analyzer = {},
         r_language_server = {},
         -- ltex = {},
-        -- texlab = {},
+        texlab = {},
+        vale = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -845,6 +846,19 @@ require('lazy').setup({
   },
 })
 
+require('lint').linters_by_ft = {
+  markdown = { 'markdownlint', 'vale' },
+  tex = { 'vale' },
+  latex = { 'vale', 'angryreviewer' },
+  yaml = { 'yamllint' },
+}
+
+vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+  callback = function()
+    require('lint').try_lint()
+  end,
+})
+
 vim.api.nvim_exec(
   [[
   autocmd BufNewFile,BufRead *.tex setfiletype tex
@@ -853,6 +867,14 @@ vim.api.nvim_exec(
 )
 -- vim.g.tex_flavor = 'latex'
 --
+--
+-- https://stackoverflow.com/questions/51995128/setting-autoindentation-to-spaces-in-neovim
+-- local o = vim.o
+vim.o.expandtab = true --  expand tab input with spaces characters
+vim.o.smartindent = true -- syntax aware indentations for newline inserts
+vim.o.tabstop = 2 -- num of space characters per tab
+vim.o.shiftwidth = 2 -- spaces per indentation level
+
 require('lualine').setup()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
