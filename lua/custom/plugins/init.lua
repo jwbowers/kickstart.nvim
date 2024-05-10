@@ -34,8 +34,17 @@ return {
       icons_enabled = true,
     },
   },
+  { 'mfussenegger/nvim-lint' },
+  { 'nvim-neotest/nvim-nio' },
+  'tpope/vim-fugitive',
   'godlygeek/tabular',
   'ntpeters/vim-better-whitespace',
+  {
+    'anufrievroman/vim-angry-reviewer',
+    config = function()
+      vim.g.AngryReviewerEnglish = 'american'
+    end,
+  },
   'craftzdog/solarized-osaka.nvim',
   'catppuccin/nvim',
   'rebelot/kanagawa.nvim',
@@ -45,4 +54,8 @@ return {
   'joshdick/onedark.vim',
   'romainl/Apprentice',
   'shaunsingh/solarized.nvim',
+  {
+    'lifepillar/vim-solarized8',
+    branch = 'neovim',
+  },
 }
