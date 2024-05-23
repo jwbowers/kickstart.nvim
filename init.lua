@@ -537,7 +537,7 @@ require('lazy').setup({
         -- gopls = {},
         pyright = {},
         rust_analyzer = {},
-        r_language_server = {},
+        -- r_language_server = {},
         -- ltex = {},
         texlab = {},
         vale = {},
