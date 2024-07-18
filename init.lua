@@ -569,7 +569,7 @@ require('lazy').setup({
         -- gopls = {},
         pyright = {},
         rust_analyzer = {},
-        -- r_language_server = {},
+        r_language_server = {},
         -- ltex = {},
         texlab = {},
         vale = {},
@@ -707,6 +707,7 @@ require('lazy').setup({
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+      require('cmp_r').setup {}
 
       cmp.setup {
         snippet = {
@@ -772,6 +773,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'cmp_r' },
         },
       }
     end,
@@ -839,7 +841,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'r', 'rnoweb' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -877,11 +879,11 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -940,6 +942,7 @@ vim.o.expandtab = true --  expand tab input with spaces characters
 vim.o.smartindent = true -- syntax aware indentations for newline inserts
 vim.o.tabstop = 2 -- num of space characters per tab
 vim.o.shiftwidth = 2 -- spaces per indentation level
+vim.o.joinspaces = false -- stop adding 2 spaces after periods
 
 require('lualine').setup()
 -- The line beneath this is called `modeline`. See `:help modeline`
