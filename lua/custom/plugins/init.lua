@@ -34,16 +34,6 @@ return {
       rcmdchunk = 0,
     },
   },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        sync_install = true,
-        ensure_installed = { 'markdown', 'markdown_inline', 'r', 'rnoweb' },
-      }
-    end,
-  },
   { 'R-nvim/cmp-r' },
   --  {
   --    'hrsh7th/nvim-cmp',
@@ -80,24 +70,23 @@ return {
   --      require('cmp_r').setup {}
   --    end,
   --  },
-  -- {
-  --    'nvim-lualine/lualine.nvim',
-  --    dependencies = { 'nvim-tree/nvim-web-devicons' },
-  --    options = {
-  --      globalstatus = true,
-  --      -- theme = 'solarized_dark',
-  --      icons_enabled = true,
-  --    },
-  --    sections = {
-  --      lualine_a = { 'mode' },
-  --      lualine_b = { { 'branch', icon = '' }, 'diagnostics' },
-  --      lualine_c = { 'filename', 'searchcount' },
-  --      lualine_x = { selectionCount },
-  --      lualine_x = { require('r.utils').get_lang },
-  --      lualine_y = { { rstatus, color = rsttcolor } },
-  --      lualine_z = { 'progress', 'location' },
-  --    },
-  --  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    options = {
+      globalstatus = true,
+      --      -- theme = 'solarized_dark',
+      icons_enabled = true,
+    },
+    sections = {
+      lualine_a = { 'mode' },
+      lualine_b = { { 'branch', icon = '' }, 'diagnostics' },
+      lualine_c = { 'filename', 'searchcount' },
+      -- lualine_x = { require('r.utils').get_lang },
+      lualine_y = { { rstatus, color = rsttcolor } },
+      lualine_z = { 'progress', 'location' },
+    },
+  },
   {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
