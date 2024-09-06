@@ -21,6 +21,7 @@ return {
     'R-nvim/R.nvim',
     -- lazy = false,
     -- try to enable vim keybindings in R console
+    R_app = 'radian',
     esc_term = false,
     -- see about better highlighting in the R console
     hl_term = true,
