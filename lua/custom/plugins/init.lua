@@ -130,12 +130,12 @@ return {
   { 'tpope/vim-fugitive' },
   { 'godlygeek/tabular' },
   { 'ntpeters/vim-better-whitespace' },
-  {
-    'anufrievroman/vim-angry-reviewer',
-    config = function()
-      vim.g.AngryReviewerEnglish = 'american'
-    end,
-  },
+  -- {
+  --   'anufrievroman/vim-angry-reviewer',
+  --   config = function()
+  --     vim.g.AngryReviewerEnglish = 'american'
+  --   end,
+  -- },
   { 'craftzdog/solarized-osaka.nvim' },
   { 'catppuccin/nvim' },
   { 'rebelot/kanagawa.nvim' },
@@ -149,4 +149,5 @@ return {
     'lifepillar/vim-solarized8',
     branch = 'neovim',
   },
+  { 'nvim-neotest/nvim-nio' },
 }
