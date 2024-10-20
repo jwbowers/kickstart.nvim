@@ -149,5 +149,8 @@ return {
     'lifepillar/vim-solarized8',
     branch = 'neovim',
   },
+  --https://github.com/marko-cerovac/material.nvim
+  { 'marko-cerovac/material.nvim' },
+  { 'EdenEast/nightfox.nvim' },
   { 'nvim-neotest/nvim-nio' },
 }
