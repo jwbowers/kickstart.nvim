@@ -626,6 +626,10 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        r_language_server = {},
+        -- ltex = {},
+        texlab = {},
+        vale = {},
 
         lua_ls = {
           -- cmd = { ... },
