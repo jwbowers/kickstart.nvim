@@ -21,7 +21,7 @@ return {
     'R-nvim/R.nvim',
     -- lazy = false,
     -- try to enable vim keybindings in R console
-    R_app = 'radian',
+    -- R_app = '/Users/jacobwbowers/homebrew/bin/R',
     esc_term = false,
     -- see about better highlighting in the R console
     hl_term = true,
@@ -29,13 +29,26 @@ return {
     assignment_keymap = '',
     -- do not change <localleader>, to |>
     pipe_keymap = '',
+    -- R.nvim is still young and we may make some breaking changes from time
+    -- to time. For now we recommend pinning to the latest minor version
+    -- like so:
+    version = '~0.1.0',
     config = {
-      active_window_warn = false,
       pdfviewer = 'open',
-      rcmdchunk = 0,
     },
   },
-  { 'R-nvim/cmp-r' },
+  {
+    'R-nvim/cmp-r',
+    {
+      'hrsh7th/nvim-cmp',
+      config = function()
+        require('cmp').setup { sources = { { name = 'cmp_r' } } }
+        require('cmp_r').setup {}
+      end,
+    },
+  },
+
+  -- { 'R-nvim/cmp-r' },
   --  {
   --    'hrsh7th/nvim-cmp',
   --    config = function()
